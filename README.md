@@ -57,6 +57,7 @@
 | Clock Period | 24.73 ns |
 | Clock Frequency | 40.44 MHz |
 | Total Cell Count | 17,108 |
+| Flop Ratio | 9.43% (1,613 flip-flops) |
 | Chip Area | 181,510.33 µm² |
 | Die Area | 731.18 × 741.90 µm |
 | Core Area | 719.90 × 718.08 µm |
@@ -64,8 +65,9 @@
 | Custom Cell Integrated | sky130_vsdinv (Custom Inverter) |
 | Post-Synthesis WNS | 0.00 ns |
 | Post-Synthesis TNS | 0.00 ns |
-| Routing | Global (FastRoute) + Detailed (TritonRoute) |
-| Parasitic Extraction | SPEF extracted post-route |
+| Post-Route WNS | 0.00 ns |
+| Post-Route TNS | 0.00 ns |
+| Routing Runtime | 25 minutes 21 seconds |
 | DRC Violations | 0 |
 | LVS Status | Clean |
 | GDSII | Generated — Fabrication Ready |
@@ -84,6 +86,7 @@
 ├── 📁 09 : GDSII              → SPEF extraction, final GDSII
 └── 📄 README.md
 ```
+
 <h2>📝 Stage Details</h2>
 
 **01 — Synthesis** &nbsp;|&nbsp; `Yosys` `ABC` `OpenSTA`
@@ -138,6 +141,9 @@ Post-route parasitic extraction performed using **SPEF Extractor** — RC wire d
 | **PDK** | [Google SkyWater Sky130 PDK](https://github.com/google/skywater-pdk) |
 | **EDA Flow** | [OpenLANE by efabless](https://github.com/efabless/openlane) |
 
+<h2>📄 License</h2>
+
+This project is licensed under the **Apache License 2.0** — as used by the OpenLANE flow developed by [efabless corporation](https://github.com/efabless/openlane).
 
 <h2>🤝 Connect</h2>
 
