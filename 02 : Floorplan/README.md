@@ -85,16 +85,16 @@ IO pin placement mode revised by modifying `FP_IO_MODE` configuration parameter.
 ![Magic 6](3_Review_floorplan_layout_in_magic_6.png)
 
 ### IO Placer Revision
-![IO 1](4_IO_Placer revision_1.png)
-![IO 2](4_IO_Placer revision_2.png)
-![IO 3](4_IO_Placer revision_3.png)
-![IO 4](4_IO_Placer revision_4.png)
-![IO 5](4_IO_Placer revision_5.png)
-![IO 6](4_IO_Placer revision_6.png)
-![IO 7](4_IO_Placer revision_7.png)
-![IO 8](4_IO_Placer revision_8.png)
-![IO 9](4_IO_Placer revision_9.png)
-![IO 10](4_IO_Placer revision_10.png)
+![IO 1](4_IO_Placer_revision_1.png)
+![IO 2](4_IO_Placer_revision_2.png)
+![IO 3](4_IO_Placer_revision_3.png)
+![IO 4](4_IO_Placer_revision_4.png)
+![IO 5](4_IO_Placer_revision_5.png)
+![IO 6](4_IO_Placer_revision_6.png)
+![IO 7](4_IO_Placer_revision_7.png)
+![IO 8](4_IO_Placer_revision_8.png)
+![IO 9](4_IO_Placer_revision_9.png)
+![IO 10](4_IO_Placer_revision_10.png)
 
 <h2>🔗 Navigation</h2>
 
