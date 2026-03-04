@@ -7,13 +7,14 @@
 ![Language](https://img.shields.io/badge/Language-Verilog%20HDL-purple)
 ![Program](https://img.shields.io/badge/Program-NASSCOM%20FutureSkills%20Prime-red)
 
-## Overview
+
+<h2>🔍 Overview</h2>
 
 Complete **RTL-to-GDSII** physical design implementation of the **PicoRV32a RISC-V processor** using the **OpenLANE** automated EDA flow on the **Google SkyWater 130nm (Sky130)** open-source PDK.
 
 The project covers the full digital design flow from RTL synthesis through to fabrication-ready GDSII generation — including integration of a **custom-designed standard cell (sky130_vsdinv)**, timing closure via ECOs, and post-route parasitic extraction.
 
-## Tools & Technology Stack
+<h2>🛠️ Tools & Technology Stack</h2>
 
 | Category | Tool / Technology |
 |---|---|
@@ -31,7 +32,7 @@ The project covers the full digital design flow from RTL synthesis through to fa
 | HDL | Verilog |
 | OS | Ubuntu Linux |
 
-## Complete Design Flow
+<h2>⚙️ Complete Design Flow</h2>
 
 | Stage | Tool | Description | Status |
 |---|---|---|---|
@@ -47,7 +48,7 @@ The project covers the full digital design flow from RTL synthesis through to fa
 | Sign-off STA | OpenSTA | Setup and hold verified with real clock model | ✅ Complete |
 | GDSII Generation | Magic | Final layout — fabrication ready | ✅ Complete |
 
-## Key Results
+<h2>📊 Key Results</h2>
 
 | Metric | Value |
 |---|---|
@@ -60,7 +61,7 @@ The project covers the full digital design flow from RTL synthesis through to fa
 | LVS Status | Clean |
 | GDSII | Generated — Fabrication Ready |
 
-## Repository Structure
+## 📁Repository Structure
 ```
 📁 Project-DigitalVLSI-SoC-Design-Planning
 ├── 📁 01 : Synthesis          → RTL synthesis, netlist, cell mapping
@@ -75,51 +76,57 @@ The project covers the full digital design flow from RTL synthesis through to fa
 └── 📄 README.md
 ```
 
-## Stage Details
+<h2>📝 Stage Details</h2>
 
-### 1. Synthesis
+**01 — Synthesis** &nbsp;|&nbsp; `Yosys` `ABC` `OpenSTA`
+
 RTL synthesised using **Yosys** with technology mapping to Sky130 standard cells via ABC. OpenLANE environment initialised, design hierarchy verified, and synthesis reports analysed for cell utilisation, area, and initial timing slack. Gate-level netlist generated as foundation for physical implementation.
 > 📁 [View Implementation Results](./01%20:%20Synthesis)
 
-### 2. Floorplan
+**02 — Floorplan** &nbsp;|&nbsp; `OpenROAD` `Magic`
+
 Die area and core utilisation defined. Standard cell rows generated and aligned with Sky130 routing tracks. IO pins placed and verified. Layout opened in **Magic** for visual inspection of row orientation, spacing, and pin accessibility.
 > 📁 [View Implementation Results](./02%20:%20Floorplan)
 
-### 3. Placement
+**03 — Placement** &nbsp;|&nbsp; `OpenROAD` `RePlAce`
+
 Congestion-aware global placement using **RePlAce**. Standard cells placed and legalised within core area. Placement density and routing resource availability verified before proceeding to CTS.
 > 📁 [View Implementation Results](./03%20:%20Placement)
 
-### 4. Custom Standard Cell — sky130_vsdinv
-Custom inverter cell designed from scratch in **Magic** following Sky130 DRC rules. SPICE netlist extracted and simulated using **Ngspice**. Timing characterised using Sky130 Liberty files. LEF extracted and integrated into OpenLANE flow — verified post-synthesis and post-CTS.
+**04 — Custom Standard Cell** &nbsp;|&nbsp; `Magic` `Ngspice` `Sky130`
+
+Custom inverter cell **sky130_vsdinv** designed from scratch in **Magic** following Sky130 DRC rules. SPICE netlist extracted and simulated using **Ngspice**. Timing characterised using Sky130 Liberty files. LEF extracted and integrated into OpenLANE flow — verified post-synthesis and post-CTS.
 > 📁 [View Implementation Results](./04%20:%20Custom%20cell)
 
-### 5. Timing Closure
+**05 — Timing Closure** &nbsp;|&nbsp; `OpenSTA` `ECO`
+
 Post-synthesis timing violations identified using **OpenSTA**. Setup slack resolved through synthesis strategy tuning — SYNTH_STRATEGY, SYNTH_BUFFERING, SYNTH_SIZING parameters adjusted. Manual ECOs performed by cell upsizing on critical paths. TNS and WNS verified toward zero before CTS.
 > 📁 [View Implementation Results](./05%20:%20Timing%20closure)
 
-### 6. Clock Tree Synthesis
+**06 — Clock Tree Synthesis** &nbsp;|&nbsp; `TritonCTS` `OpenSTA`
+
 Clock tree built using **TritonCTS**. Clock buffers inserted to balance load and minimise skew across all flip-flops. Buffer drive strength experimented — impact on slew, skew, area, and power analysed. Real clock propagation model applied and hold slack verified post-CTS.
 > 📁 [View Implementation Results](./06%20:%20CTS)
 
-### 7. Power Distribution Network
+**07 — Power Distribution Network** &nbsp;|&nbsp; `OpenROAD` `Magic`
+
 PDN generated using `gen_pdn`. Power rings, straps, and standard cell rails built across die. Via connectivity verified at all strap intersections. Custom inverter rail connectivity confirmed in Magic. Design prepared for signal routing with full power integrity.
 > 📁 [View Implementation Results](./07%20:%20PDN)
 
-### 8. Routing
+**08 — Routing** &nbsp;|&nbsp; `FastRoute` `TritonRoute`
+
 Global routing performed using **FastRoute** — approximate paths planned across G-cell grid. Detailed routing completed using **TritonRoute** — exact metal shapes and vias placed with full DRC compliance. Iterative optimisation passes reduced violations to zero.
 > 📁 [View Implementation Results](./08%20:%20Routing)
 
-### 9. GDSII Generation
+**09 — GDSII Generation** &nbsp;|&nbsp; `SPEF Extractor` `Magic` `Netgen`
+
 Post-route parasitic extraction performed using **SPEF Extractor** — RC wire data generated for all nets. Final sign-off STA executed with real parasitics — setup and hold slack both positive. GDSII streamed out using **Magic** — fabrication-ready layout verified DRC-clean.
 > 📁 [View Implementation Results](./09%20:%20GDSII)
 
----
+<h2>🤝 Connect</h2>
 
-## Connect
-
-| | |
+| **Author** |  Preetham SK |
 |:---|:---|
-| **Author** | Preetham SK |
 | **Program** | NASSCOM FutureSkills Prime — VSD (VLSI System Design) |
 | **LinkedIn** | [linkedin.com/in/preethamsk16](https://www.linkedin.com/in/preethamsk16) |
 | **GitHub** | [github.com/PreethamSK163](https://github.com/PreethamSK163) |
